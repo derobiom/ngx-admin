@@ -1,10 +1,10 @@
 export const environment = {
   production: true,
-  api: 'https://datahaxapi.azurewebsites.net',
-  host: 'https://moyescomap.azurewebsites.net',
-  clientID: '7Z8qwNSLvOr2Y73SZrouKVsbpXh7Sg0p',
-  domain: 'moyesco.auth0.com',
-  callbackURL: 'https://moyescomap.azurewebsites.net/#/callback',
-  signupCallbackURL: 'https://moyescomap.azurewebsites.net/signup',
-  apiUrl: 'https://datahax',
+  api: 'https://localhost:4200',
+  host: 'https://localhost:4200',
+  clientID: '{your auth0 clientid}',
+  domain: '{your auth0 domain}',
+  callbackURL: 'https://localhost:4200/#/callback',
+  signupCallbackURL: 'https://localhost:4200/signup',
+  apiUrl: '{your api url}',
 };
