@@ -39,7 +39,7 @@ export class AuthService {
       window.location.hash = '';
       if (authResult && authResult.accessToken && authResult.idToken ) {
         this.setSession(authResult);
-      } 
+      }
     });
   }
 
@@ -54,10 +54,7 @@ export class AuthService {
       if (profile) {
         cb(profile);
       }
-      else {
-        return null;
-      }
-    });   
+    });
   }
 
   private setSession(authResult): void {
