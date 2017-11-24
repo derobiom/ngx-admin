@@ -1,0 +1,12 @@
+{
+    "authorize": {
+          "target": "https://moyesco.auth0.com/authorize", 
+           "secure":false,
+           "changeOrigin": true
+        },   
+    "api/v2/users": {
+            "target": "https://moyesco.auth0.com/api/v2/users", 
+             "secure":false,
+             "changeOrigin": true
+          }        
+}

@@ -1,0 +1,7 @@
+{
+    "/api/*": {
+          "target": "https://datahaxapi.azurewebsites.net/", 
+           "secure":false,
+           "changeOrigin": true
+        }   
+}

@@ -15,8 +15,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { ThemeModule } from './@theme/theme.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+import {AuthService} from './auth/auth.service';
+import {AuthGuardService} from './auth/auth-guard.service';
+import { CallbackComponent} from './callback.component'
+
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, CallbackComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -26,10 +30,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     NgbModule.forRoot(),
     ThemeModule.forRoot(),
     CoreModule.forRoot(),
+    HttpModule
   ],
   bootstrap: [AppComponent],
   providers: [
-    { provide: APP_BASE_HREF, useValue: '/' },
+    { provide: APP_BASE_HREF, useValue: '/' }, AuthService,AuthGuardService,HttpModule
   ],
 })
 export class AppModule {
