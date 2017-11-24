@@ -1,4 +1,4 @@
-import { Component, ChangeDetectorRef } from '@angular/core';
+import { Component, ChangeDetectorRef, AfterViewChecked } from '@angular/core';
 import { NbMenuItem } from '@nebular/theme';
 import { MENU_ITEMS } from './pages-menu';
 import { forEach } from '@angular/router/src/utils/collection';
@@ -15,7 +15,7 @@ import { AuthService } from '../auth/auth.service';
     </ngx-sample-layout>
   `,
 })
-export class PagesComponent {
+export class PagesComponent implements AfterViewChecked {
 
     isAuthenticated = false;
   //menu = MENU_ITEMS;
@@ -27,7 +27,7 @@ export class PagesComponent {
       link: '/pages/dashboard',
       home: true,
       hidden: false,
-      data: ""
+      data: ''
     },
     {
       title: 'Reports',
@@ -35,7 +35,7 @@ export class PagesComponent {
       link: '/pages/reports',
       home: true,
       hidden: false,
-      data: ""
+      data: ''
     },
   ];
 
@@ -45,26 +45,26 @@ export class PagesComponent {
       icon: 'nb-person',
       link: '/pages/users',
       hidden: false,
-      data: "write:users"
+      data: 'write:users'
     },
   ];
 
   notauthmenu: NbMenuItem[] = [
   ];
 
-  constructor(private auth:AuthService, private cdRef : ChangeDetectorRef){
+  constructor(private auth:AuthService, private cdRef: ChangeDetectorRef) {
     this.isAuthenticated = this.auth.isAuthenticated();   
   }
 
   ngAfterViewChecked() {
     let isAuthenticated = this.auth.isAuthenticated();
-    if (isAuthenticated != this.isAuthenticated) { // check if it change, tell CD update view
+    if (isAuthenticated !== this.isAuthenticated) { // check if it change, tell CD update view
       this.isAuthenticated = isAuthenticated;
       this.cdRef.detectChanges();
     }
   }
 
-  writeUsers():boolean{
+  writeUsers():boolean {
     if (this.auth.isAuthenticated())
     {
       if (this.auth.userHasScopes(["write:users"])){
