@@ -3,7 +3,7 @@ import { AuthService} from '../../auth/auth.service';
 
 @Component({
   selector: 'ngx-blank',
-  template: ``
+  template: ``,
 })
 export class UsersComponent {
 

@@ -5,10 +5,10 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { PagesRoutingModule } from './pages-routing.module';
 import { ThemeModule } from '../@theme/theme.module';
 
-import { LoginModule } from './login/login.module'
-import { LogoutModule } from './logout/logout.module'
-import { BlankModule } from './blank/blank.module'
-import { UsersModule } from './users/users.module'
+import { LoginModule } from './login/login.module';
+import { LogoutModule } from './logout/logout.module';
+import { BlankModule } from './blank/blank.module';
+import { UsersModule } from './users/users.module';
 
 const PAGES_COMPONENTS = [
   PagesComponent,
@@ -22,7 +22,7 @@ const PAGES_COMPONENTS = [
     LoginModule,
     LogoutModule,
     BlankModule,
-    UsersModule 
+    UsersModule,
   ],
   declarations: [
     ...PAGES_COMPONENTS,
