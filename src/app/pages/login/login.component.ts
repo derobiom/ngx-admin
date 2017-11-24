@@ -5,11 +5,9 @@ import { AuthService} from '../../auth/auth.service';
   selector: 'ngx-login',
   template: `Login initiated.`,
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
 
-  constructor(private auth: AuthService){
-
-  }
+  constructor(private auth: AuthService) {}
 
   ngOnInit(){
     this.auth.login();
