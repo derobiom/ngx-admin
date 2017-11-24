@@ -9,7 +9,7 @@ import {
   NbResetPasswordComponent,
 } from '@nebular/auth';
 
-import { CallbackComponent} from './callback.component'
+import { CallbackComponent} from './callback.component';
 
 const routes: Routes = [
   { path: 'callback', component: CallbackComponent },

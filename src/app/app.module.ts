@@ -17,7 +17,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import {AuthService} from './auth/auth.service';
 import {AuthGuardService} from './auth/auth-guard.service';
-import { CallbackComponent} from './callback.component'
+import { CallbackComponent} from './callback.component';
 
 @NgModule({
   declarations: [AppComponent, CallbackComponent],
@@ -30,11 +30,11 @@ import { CallbackComponent} from './callback.component'
     NgbModule.forRoot(),
     ThemeModule.forRoot(),
     CoreModule.forRoot(),
-    HttpModule
+    HttpModule,
   ],
   bootstrap: [AppComponent],
   providers: [
-    { provide: APP_BASE_HREF, useValue: '/' }, AuthService,AuthGuardService,HttpModule
+    { provide: APP_BASE_HREF, useValue: '/' }, AuthService, AuthGuardService, HttpModule,
   ],
 })
 export class AppModule {
