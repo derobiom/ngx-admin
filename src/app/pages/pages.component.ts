@@ -27,7 +27,7 @@ export class PagesComponent implements AfterViewChecked {
       link: '/pages/dashboard',
       home: true,
       hidden: false,
-      data: ''
+      data: '',
     },
     {
       title: 'Reports',
@@ -35,7 +35,7 @@ export class PagesComponent implements AfterViewChecked {
       link: '/pages/reports',
       home: true,
       hidden: false,
-      data: ''
+      data: '',
     },
   ];
 
@@ -45,7 +45,7 @@ export class PagesComponent implements AfterViewChecked {
       icon: 'nb-person',
       link: '/pages/users',
       hidden: false,
-      data: 'write:users'
+      data: 'write:users',
     },
   ];
 

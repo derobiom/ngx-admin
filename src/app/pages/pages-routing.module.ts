@@ -17,25 +17,25 @@ const routes: Routes = [{
     component: DashboardComponent, canActivate: [AuthGuardService],
   }, {
     path: 'ui-features',
-    loadChildren: './ui-features/ui-features.module#UiFeaturesModule',canActivate: [AuthGuardService],
+    loadChildren: './ui-features/ui-features.module#UiFeaturesModule', canActivate: [AuthGuardService],
   }, {
     path: 'components',
-    loadChildren: './components/components.module#ComponentsModule',canActivate: [AuthGuardService],
+    loadChildren: './components/components.module#ComponentsModule', canActivate: [AuthGuardService],
   }, {
     path: 'maps',
-    loadChildren: './maps/maps.module#MapsModule',canActivate: [AuthGuardService],
+    loadChildren: './maps/maps.module#MapsModule', canActivate: [AuthGuardService],
   }, {
     path: 'charts',
-    loadChildren: './charts/charts.module#ChartsModule',canActivate: [AuthGuardService],
+    loadChildren: './charts/charts.module#ChartsModule', canActivate: [AuthGuardService],
   }, {
     path: 'editors',
-    loadChildren: './editors/editors.module#EditorsModule',canActivate: [AuthGuardService],
+    loadChildren: './editors/editors.module#EditorsModule', canActivate: [AuthGuardService],
   }, {
     path: 'forms',
-    loadChildren: './forms/forms.module#FormsModule',canActivate: [AuthGuardService],
+    loadChildren: './forms/forms.module#FormsModule', canActivate: [AuthGuardService],
   }, {
     path: 'tables',
-    loadChildren: './tables/tables.module#TablesModule',canActivate: [AuthGuardService],
+    loadChildren: './tables/tables.module#TablesModule', canActivate: [AuthGuardService],
   }, {
     path: 'login',
     component: LoginComponent,
@@ -54,7 +54,7 @@ const routes: Routes = [{
   }, {
     path: '**',
     component: BlankComponent,
-  }
+  },
 
 ],
 }];
