@@ -16,10 +16,10 @@ export class HeaderComponent implements OnInit {
 
   @Input() position = 'normal';
   public isAuthenticated = false;
-  public username: string = "unknown";
+  public username  = 'unknown';
   public notAuthMenu = [{ title: 'Login', link: 'login' }];
   public authMenu = [{ title: 'Profile', link: 'profile' }, { title: 'Log out', link: 'logout' }];
-  requestedScopes: string = 'openid profile read:messages write:messages';
+  requestedScopes = 'openid profile read:messages write:messages';
   auth0 = new auth0.WebAuth({
     clientID: environment.clientID,
     domain: environment.domain,
@@ -27,7 +27,7 @@ export class HeaderComponent implements OnInit {
     audience: environment.apiUrl,
     redirectUri: environment.callbackURL,
     scope: this.requestedScopes,
-    leeway: 30
+    leeway: 30,
   });
 
   constructor(private sidebarService: NbSidebarService,
@@ -43,9 +43,9 @@ export class HeaderComponent implements OnInit {
   }
 
   ngAfterViewChecked() {
-    let isAuthenticated = this.auth.isAuthenticated();
-    if (isAuthenticated != this.isAuthenticated) { // check if it change, tell CD update view
-      this.isAuthenticated = isAuthenticated;
+    let is = this.auth.isAuthenticated();
+    if (is != this.isAuthenticated) { // check if it change, tell CD update view
+      this.isAuthenticated = is;
       this.cdRef.detectChanges();
     }
   }
@@ -59,7 +59,6 @@ export class HeaderComponent implements OnInit {
           this.username = profile.nickname;
         }
         else {
-          console.log("header failed to retrieve auth0 profile.");
           return null;
         }
       });

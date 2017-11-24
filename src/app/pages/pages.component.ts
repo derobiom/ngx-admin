@@ -64,10 +64,10 @@ export class PagesComponent implements AfterViewChecked {
     }
   }
 
-  writeUsers():boolean {
+  writeUsers():boolean { 
     if (this.auth.isAuthenticated())
     {
-      if (this.auth.userHasScopes(["write:users"])){
+      if (this.auth.userHasScopes(['write:users'])) {
         return true;
       }
       else return false;

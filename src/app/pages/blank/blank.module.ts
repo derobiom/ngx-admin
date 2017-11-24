@@ -5,7 +5,7 @@ import { BlankComponent } from './blank.component';
 @NgModule({
  
   declarations: [
-    BlankComponent
+    BlankComponent,
   ],
 })
 export class BlankModule { }

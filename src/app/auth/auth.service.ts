@@ -20,7 +20,7 @@ export class AuthService {
     audience: environment.apiUrl,
     redirectUri: environment.callbackURL,
     scope: this.requestedScopes,
-    leeway: 30
+    leeway: 30,
   });
 
   constructor(public router: Router, private userService: UserService, private http: Http) {}
@@ -58,7 +58,6 @@ export class AuthService {
   public getProfile(cb: any): void {
     const accessToken = localStorage.getItem('access_token');
     if (!accessToken) {
-      console.log("no user profile because no token");
       throw new Error('Access token must exist to fetch profile');
     }
 
@@ -67,7 +66,6 @@ export class AuthService {
         cb(profile);
       }
       else {
-        console.log("failed to retrieve auth0 profile.");
         return null;
       }
     });
