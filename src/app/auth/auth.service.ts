@@ -4,14 +4,13 @@ import { Router } from '@angular/router';
 import 'rxjs/add/operator/filter';
 import * as auth0 from 'auth0-js';
 import { UserService } from '../@core/data/users.service';
-import { Observable } from 'rxjs/Rx';
 import { Http, Response, Headers, ResponseType, RequestOptions, ResponseContentType } from '@angular/http';
 
 @Injectable()
 export class AuthService {
 
   userProfile: any;
-  requestedScopes: string = 'openid profile write:users';
+  requestedScopes = 'openid profile write:users';
 
   auth0 = new auth0.WebAuth({
     clientID: environment.clientID,
@@ -30,8 +29,8 @@ export class AuthService {
     this.auth0.authorize();
   }
 
-  public signup(): void {   
-    //this.auth0.signup();
+  public signup(): void {
+    // this.auth0.signup();
     this.auth0.authorize();
   }
 
