@@ -7,8 +7,7 @@ import { AuthService} from '../../auth/auth.service';
 })
 export class UsersComponent {
 
-  constructor(private auth: AuthService){
-
+  constructor(private auth: AuthService) {
   }
 
 }
