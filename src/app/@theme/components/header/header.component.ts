@@ -1,5 +1,5 @@
-import { Component, Input, OnInit, AfterViewInit, ChangeDetectorRef } from '@angular/core';
-import { environment } from '../../../../environments/environment'
+import { Component, Input, OnInit, AfterViewInit, ChangeDetectorRef, AfterViewChecked } from '@angular/core';
+import { environment } from '../../../../environments/environment';
 import { NbMenuService, NbSidebarService } from '@nebular/theme';
 import { UserService } from '../../../@core/data/users.service';
 import { AnalyticsService } from '../../../@core/utils/analytics.service';
@@ -12,7 +12,7 @@ import * as auth0 from 'auth0-js';
   styleUrls: ['./header.component.scss'],
   templateUrl: './header.component.html',
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, AfterViewChecked, AfterViewInit {
 
   @Input() position = 'normal';
   public isAuthenticated = false;
@@ -35,7 +35,7 @@ export class HeaderComponent implements OnInit {
               private userService: UserService,
               private analyticsService: AnalyticsService,
               private auth: AuthService,
-              private cdRef : ChangeDetectorRef) { 
+              private cdRef: ChangeDetectorRef) {
                 this.isAuthenticated = this.auth.isAuthenticated();
   }
 
@@ -43,23 +43,19 @@ export class HeaderComponent implements OnInit {
   }
 
   ngAfterViewChecked() {
-    let is = this.auth.isAuthenticated();
-    if (is != this.isAuthenticated) { // check if it change, tell CD update view
+    const is = this.auth.isAuthenticated();
+    if (is !== this.isAuthenticated) { // check if it change, tell CD update view
       this.isAuthenticated = is;
       this.cdRef.detectChanges();
     }
   }
 
   ngAfterViewInit() {
-    if (this.auth.isAuthenticated())
-    {
+    if (this.auth.isAuthenticated()) {
       const accessToken = localStorage.getItem('access_token');
       this.auth0.client.userInfo(accessToken, (err, profile) => {
         if (profile) {
           this.username = profile.nickname;
-        }
-        else {
-          return null;
         }
       });
     }
