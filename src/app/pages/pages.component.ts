@@ -51,7 +51,7 @@ export class PagesComponent implements AfterViewChecked {
   notauthmenu: NbMenuItem[] = [
   ];
 
-  constructor(private auth:AuthService, private cdRef: ChangeDetectorRef) {
+  constructor(private auth: AuthService, private cdRef: ChangeDetectorRef) {
     this.isAuthenticated = this.auth.isAuthenticated();
   }
 
@@ -64,14 +64,13 @@ export class PagesComponent implements AfterViewChecked {
   }
 
   writeUsers():boolean {
-    if (this.auth.isAuthenticated())
-    {
+    if (this.auth.isAuthenticated()) {
       if (this.auth.userHasScopes(['write:users'])) {
         return true;
       }
-      else {return false;}
+      return false;
     }
-    else {return false;}
+    return false;
   }
 
 }
