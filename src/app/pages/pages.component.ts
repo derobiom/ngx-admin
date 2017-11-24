@@ -56,14 +56,14 @@ export class PagesComponent implements AfterViewChecked {
   }
 
   ngAfterViewChecked() {
-    let isAuthenticated = this.auth.isAuthenticated();
+    const isAuthenticated = this.auth.isAuthenticated();
     if (isAuthenticated !== this.isAuthenticated) { // check if it change, tell CD update view
       this.isAuthenticated = isAuthenticated;
       this.cdRef.detectChanges();
     }
   }
 
-  writeUsers():boolean {
+  writeUsers(): boolean {
     if (this.auth.isAuthenticated()) {
       if (this.auth.userHasScopes(['write:users'])) {
         return true;
