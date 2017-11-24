@@ -8,7 +8,7 @@ import { AuthService} from '../../auth/auth.service';
 export class LogoutComponent implements OnInit {
   constructor(private auth: AuthService) {}
 
-  ngOnInit(){
+  ngOnInit() {
     this.auth.logout();
   }
 }

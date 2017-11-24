@@ -1,19 +1,19 @@
 import { NbMenuItem } from '@nebular/theme';
 import { AuthService } from '../auth/auth.service';
 
-export var MENU_ITEMS: NbMenuItem[] = [
+export let MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'Dashboard',
     icon: 'nb-home',
     link: '/pages/dashboard',
     home: true,
-    hidden: false
+    hidden: false,
   },
   {
     title: 'Users',
     icon: 'nb-keypad',
     link: '/pages/users',
-    hidden: true
+    hidden: true,
   },
   // {
   //   title: 'FEATURES',
