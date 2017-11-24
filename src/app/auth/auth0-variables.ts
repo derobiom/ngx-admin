@@ -11,7 +11,7 @@ export const AUTH_CONFIG: AuthConfig = {
   domain: 'moyesco.auth0.com',
   callbackURL: 'https://localhost:4200/#callback',
   signupCallbackURL: 'https://localhost:4200/#callback',
-  apiUrl: 'https://datahax'
+  apiUrl: 'https://datahax',
 };
 
 
