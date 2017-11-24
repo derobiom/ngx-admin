@@ -6,5 +6,5 @@ export const environment = {
   domain: 'moyesco.auth0.com',
   callbackURL: 'https://moyescomap.azurewebsites.net/#/callback',
   signupCallbackURL: 'https://moyescomap.azurewebsites.net/signup',
-  apiUrl: 'https://datahax'
+  apiUrl: 'https://datahax',
 };

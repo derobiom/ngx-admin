@@ -6,5 +6,5 @@ export const environment = {
   domain: 'moyesco.auth0.com',
   callbackURL: 'https://localhost:4200/#/callback',
   signupCallbackURL: 'https://localhost:4200/signup',
-  apiUrl: 'https://datahax'
+  apiUrl: 'https://datahax',
 };

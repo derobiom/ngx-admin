@@ -6,5 +6,5 @@ export const environment = {
   domain: '{your auth0 domain}',
   callbackURL: 'https://localhost:4200/#/callback',
   signupCallbackURL: 'https://localhost:4200/signup',
-  apiUrl: '{your api url}'
+  apiUrl: '{your api url}',
 };
