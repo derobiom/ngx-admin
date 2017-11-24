@@ -36,26 +36,16 @@ export class AuthService {
   }
 
   public handleAuthentication(): void {
-
     this.auth0.parseHash((err, authResult) => {
       window.location.hash = '';
       if (authResult && authResult.accessToken && authResult.idToken ) {
-       // window.location.hash = '';
         this.setSession(authResult);
-      } else if (err) {
-        if (err.errorDescription == 'Please verify your email before logging in.')
-          {
-            this.router.navigate(['verify']);
-          }
-        else {  
-          this.router.navigate(['error']);
-        }
-      }
+      } 
     });
-
   }
 
   public getProfile(cb: any): void {
+
     const accessToken = localStorage.getItem('access_token');
     if (!accessToken) {
       throw new Error('Access token must exist to fetch profile');
@@ -68,9 +58,7 @@ export class AuthService {
       else {
         return null;
       }
-    });
-
-    
+    });   
   }
 
   private setSession(authResult): void {
