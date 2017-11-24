@@ -17,8 +17,7 @@ import { AuthService } from '../auth/auth.service';
 })
 export class PagesComponent implements AfterViewChecked {
 
-    isAuthenticated = false;
-  //menu = MENU_ITEMS;
+  isAuthenticated = false;
 
   commonMenu: NbMenuItem[] = [
     {
@@ -53,7 +52,7 @@ export class PagesComponent implements AfterViewChecked {
   ];
 
   constructor(private auth:AuthService, private cdRef: ChangeDetectorRef) {
-    this.isAuthenticated = this.auth.isAuthenticated();   
+    this.isAuthenticated = this.auth.isAuthenticated();
   }
 
   ngAfterViewChecked() {
@@ -64,15 +63,15 @@ export class PagesComponent implements AfterViewChecked {
     }
   }
 
-  writeUsers():boolean { 
+  writeUsers():boolean {
     if (this.auth.isAuthenticated())
     {
       if (this.auth.userHasScopes(['write:users'])) {
         return true;
       }
-      else return false;
+      else {return false;}
     }
-    else return false;
+    else {return false;}
   }
 
 }
