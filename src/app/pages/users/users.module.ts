@@ -5,7 +5,7 @@ import { UsersComponent } from './users.component';
 @NgModule({
  
   declarations: [
-    UsersComponent
+    UsersComponent,
   ],
 })
 export class UsersModule { }
