@@ -2,7 +2,7 @@
 # Fork of ngx-admin with <a href="https://github.com/auth0/auth0.js?files=1">auth0-js</a> integration for authentication and authorization <a href="https://github.com/akveo/ngx-admin">ngx-admin</a>
 
 <h4>Instructions:</h4>
-1. Please add environment files in the /src/app/environments directory:<br>
+1. Please add two environment files in the /src/app/environments directory:<br>
 <br>
 environment.prod.ts<br>
 environment.ts<br>
