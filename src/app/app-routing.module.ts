@@ -14,8 +14,8 @@ import { CallbackComponent} from './callback.component';
 const routes: Routes = [
   { path: 'callback', component: CallbackComponent },
   { path: 'pages', loadChildren: 'app/pages/pages.module#PagesModule' },
-  { path: '', redirectTo: 'pages/dashboard', pathMatch: 'full' },
-  { path: '**', redirectTo: 'pages' },
+  { path: '', redirectTo: 'pages', pathMatch: 'full'},
+  { path: '**', redirectTo: 'pages', pathMatch: 'full'},
 ];
 
 const config: ExtraOptions = {
